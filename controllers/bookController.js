@@ -11,7 +11,7 @@ exports.createBook = async (req, res) => {
 };
 
 exports.getBooks = async (req, res) => {
-  const { author, genre, page = 1, limit = 10 } = req.query; // adding paginatio of limit 10 
+  const { author, genre, page = 1, limit = 10 } = req.query; // adding pagination of limit 10 
   const filter = {};
   if (author) filter.author = new RegExp(author, 'i');
   if (genre) filter.genre = new RegExp(genre, 'i');
@@ -35,7 +35,7 @@ exports.getBookDetails = async (req, res) => {
 
     const avgRating = await Review.aggregate([
       { $match: { book: book._id } },
-      { $group: { _id: null, avg: { $avg: "$rating" } } }
+      { $group: { _id: null, avg: { $avg: "$rating" } } } // retrieving the average rating of book
     ]);
 
     res.json({

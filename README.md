@@ -25,3 +25,17 @@
 - install nodemon using npm install --save-dev nodemon (if nodemon dependency is not there in the package.json).
 - once done execute npm start command.
 - navigate to the port to check if it is working on the localhost.
+
+
+- make sure to have .env file to test the application 
+    - MONGO_URI needed
+    - PORT needed
+    - JWT_SECRET needed
+    in order for quick check ping me for these.
+
+- Schema 
+    - user model, book model, rreview model
+
+    - user model == wherever a user signs in the {email, username, password(encrypted) gets stored in the collection}
+    - book model == book details with the createdby field (stores the id of the user )
+    - review model == stores the book id , user id and the commect and rating on the book (min:1 , max :5)
