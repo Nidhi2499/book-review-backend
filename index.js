@@ -7,9 +7,9 @@ app.use(express.json());
 
 connectDB();
 
-app.use('/api', require('./routes/authRoutes'));
-app.use('/api/books', require('./routes/bookRoutes'));
-app.use('/api', require('./routes/reviewRoutes'));
+app.use('/api', require('./routes/authRoutes')); // authentication routes
+app.use('/api/books', require('./routes/bookRoutes')); // books routes
+app.use('/api', require('./routes/reviewRoutes')); // review routes
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

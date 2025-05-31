@@ -22,4 +22,5 @@ const bookSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
+bookSchema.index({ title: 'text', author: 'text' }); // text index for search
 module.exports = mongoose.model('Book', bookSchema);

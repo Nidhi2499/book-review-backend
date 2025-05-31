@@ -1,6 +1,6 @@
 const express = require('express');
 const { createReview, updateReview, deleteReview } = require('../controllers/reviewController');
-const auth = require('../middleware/authMiddleware');
+const auth = require('../middlewares/authMiddleware');
 const router = express.Router();
 
 router.post('/books/:id/reviews', auth, createReview);
